@@ -255,42 +255,6 @@ Vi använder följande grenstruktur för att hålla projektet organiserat:
    git push origin main
    ```
 
-### **Exempel på Arbetsflöde när du ändrar något**
-
-# Gör ändringar i feature/header
-
-git checkout feature/header
-git add .
-git commit -m "Uppdaterade header-HTML"
-
-# Uppdatera feature/header med senaste ändringar från main
-
-git checkout main
-git pull origin main
-git checkout feature/header
-git merge main
-
-# Lös eventuella konflikter och committa
-
-git add .
-git commit -m "Löst konflikter efter att ha uppdaterat från main"
-
-# Merga feature/header till main
-
-git checkout main
-git merge --no-ff feature/header
-
-# Pusha ändringarna till remote main
-
-git push origin main
-
-# Ta bort den lokala och remote feature-grenen (valfritt)
-
-git branch -d feature/header
-git push origin --delete feature/header
-
----
-
 ### **Tips**
 
 - **Synka ofta**: Hämta ändringar från `main` regelbundet för att undvika konflikter.
