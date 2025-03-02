@@ -153,3 +153,113 @@ Följ dessa steg för att dynamiskt ladda en komponent i `index.html`:
 3. **Testning**:
    - Testa varje komponent isolerat innan du integrerar den i `index.html`.
    - Se till att det inte finns några konflikter mellan komponenter.
+
+Här är en kort beskrivning av grundläggande Git-kommandon för att **lägga till**, **puscha**, och **merga**, samt hur grenar kan användas i projektet. Du kan inkludera detta i din `README.md`-fil.
+
+---
+
+## **Grundläggande Git-kommandon**
+
+### **Vanliga Kommandon**
+
+1. **Lägg till ändringar**:
+
+   - Lägg till alla ändringar
+     ```bash
+     git add .
+     ```
+   - Lägg till en specifik fil:
+     ```bash
+     git add filnamn
+     ```
+
+2. **Spara ändringar (Commit)**:
+
+   - Skapa en commit med ett meddelande:
+     ```bash
+     git commit -m "Beskriv dina ändringar här"
+     ```
+
+3. **Pusha till remote repository**:
+
+   - Skicka dina commits till remote repository:
+     ```bash
+     git push origin grennamn
+     ```
+
+4. **Hämta senaste ändringar**:
+
+   - Hämta ändringar från remote repository:
+     ```bash
+     git pull origin grennamn
+     ```
+
+5. **Skapa en ny gren**:
+
+   - Skapa och byt till en ny gren:
+     ```bash
+     git checkout -b ny-gren
+     ```
+
+6. **Växla mellan grenar**:
+
+   - Bytt till en befintlig gren:
+     ```bash
+     git checkout grennamn
+     ```
+
+7. **Merga grenar**:
+   - Merga en gren till din nuvarande gren (t.ex., `main`):
+     ```bash
+     git checkout main
+     git merge grennamn
+     ```
+
+---
+
+### **Våra Grenar**
+
+Vi använder följande grenstruktur för att hålla projektet organiserat:
+
+1. **`main`**:
+
+   - Huvudgrenen som innehåller den senaste stabila versionen av koden.
+   - Endast färdiggranskad och testad kod mergas in här.
+
+2. **`feature/*`**:
+   - Grenar för nya funktioner (t.ex., `feature/header`, `feature/footer`).
+   - Varje funktion utvecklas i en egen gren och mergas sedan in i `main`.
+
+---
+
+### **Exempel på Arbetsflöde**
+
+1. Skapa en ny gren för en funktion:
+   ```bash
+   git checkout -b feature/header
+   ```
+2. Lägg till och committa ändringar:
+   ```bash
+   git add .
+   git commit -m "Lade till header-komponent"
+   ```
+3. Pusha grenen till remote:
+   ```bash
+   git push origin feature/header
+   ```
+4. När funktionen är klar, merga den till `main`:
+   ```bash
+   git checkout main
+   git pull origin main
+   git merge feature/header
+   git push origin main
+   ```
+
+---
+
+### **Tips**
+
+- **Synka ofta**: Hämta ändringar från `main` regelbundet för att undvika konflikter.
+- **Beskrivande commit-meddelanden**: Skriv tydliga och beskrivande meddelanden för varje commit.
+
+---
