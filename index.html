@@ -3,7 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles/header.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- Header componenten-->
+    <div id="header"></div>
+
+    <!-- andra komponeneter läggs in här -->
+
+    <script>
+      // Laddar header komponenten, viktigt med rätt path
+      fetch("components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          //Välj elementen från detta html som komponenten ska in.
+          document.getElementById("header").innerHTML = data;
+
+          // Laddar scripten från komponenten efter att html är klart
+          const script = document.createElement("script");
+          // Välj scripten som är knuten till komponenten
+          script.src = "scripts/header.js";
+          document.body.appendChild(script);
+        });
+    </script>
+  </body>
 </html>
