@@ -9,6 +9,7 @@
   <body>
     <!-- Header componenten-->
     <div id="header"></div>
+    <div id="footer"></div>
 
     <!-- andra komponeneter läggs in här -->
 
@@ -24,6 +25,18 @@
           const script = document.createElement("script");
           // Välj scripten som är knuten till komponenten
           script.src = "scripts/header.js";
+          document.body.appendChild(script);
+        });
+        fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          //Välj elementen från detta html som komponenten ska in.
+          document.getElementById("footer").innerHTML = data;
+
+          // Laddar scripten från komponenten efter att html är klart
+          const script = document.createElement("script");
+          // Välj scripten som är knuten till komponenten
+          script.src = "scripts/footer.js";
           document.body.appendChild(script);
         });
     </script>
