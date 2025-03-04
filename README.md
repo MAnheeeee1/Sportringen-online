@@ -154,8 +154,6 @@ Följ dessa steg för att dynamiskt ladda en komponent i `index.html`:
    - Testa varje komponent isolerat innan du integrerar den i `index.html`.
    - Se till att det inte finns några konflikter mellan komponenter.
 
-Här är en kort beskrivning av grundläggande Git-kommandon för att **lägga till**, **puscha**, och **merga**, samt hur grenar kan användas i projektet. Du kan inkludera detta i din `README.md`-fil.
-
 ---
 
 ## **Grundläggande Git-kommandon**
@@ -254,10 +252,3 @@ Vi använder följande grenstruktur för att hålla projektet organiserat:
    git merge feature/header
    git push origin main
    ```
-
-### **Tips**
-
-- **Synka ofta**: Hämta ändringar från `main` regelbundet för att undvika konflikter.
-- **Beskrivande commit-meddelanden**: Skriv tydliga och beskrivande meddelanden för varje commit.
-
----
